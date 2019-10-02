@@ -1,4 +1,6 @@
-FROM python:alpine3.9
+FROM python:alpine3.10
+# If you need to install Pandas or Numpy then use the following base image
+# FROM python:slim
 
 WORKDIR /home/app
 
