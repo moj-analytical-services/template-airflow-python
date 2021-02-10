@@ -1,1 +1,1 @@
-boto3==1.9.189
+dataengineeringutils3==v1.0.1
