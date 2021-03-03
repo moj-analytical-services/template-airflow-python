@@ -1,16 +1,13 @@
-FROM python:alpine3.10
+FROM 593291632749.dkr.ecr.eu-west-1.amazonaws.com/python:alpine3.10
 # If you need to install Pandas or Numpy then use the following base image
-# FROM python:slim
+# FROM 593291632749.dkr.ecr.eu-west-1.amazonaws.com/python:3.7-slim
 
-WORKDIR /home/app
+# Create a working directory to do stuff from
+WORKDIR /etl
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-RUN addgroup -g 1000 -S app && \
-    adduser -u 1000 -S app -G app
-USER app
+COPY scripts/ scripts/
 
-COPY . /home/app
-
-ENTRYPOINT python -u /home/app/run.py
+ENTRYPOINT python -u scripts/copy_data.py
