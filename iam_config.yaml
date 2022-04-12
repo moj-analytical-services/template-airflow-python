@@ -1,8 +1,0 @@
-iam_role_name: rename-to-role-name
-
-s3:
-  read_only:
-    - bucket-name-to-copy-from/path/in/from/bucket/*
-
-  read_write:
-    - bucket-name-to-copy-to/path/to/copy/to/*
