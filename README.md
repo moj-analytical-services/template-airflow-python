@@ -1,2 +1,2 @@
 # template-airflow-python
-Template repository for running ariflow python tasks in Kubernetes/Docker
+Template repository for running airflow python tasks in Kubernetes/Docker
