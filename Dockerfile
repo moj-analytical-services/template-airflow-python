@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM 189157455002.dkr.ecr.eu-west-1.amazonaws.com/python:3.9-slim
 # If you need to install Pandas or Numpy then use the following base image
 # FROM 593291632749.dkr.ecr.eu-west-1.amazonaws.com/python:3.7-slim
 
