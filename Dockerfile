@@ -10,4 +10,7 @@ RUN pip install -r requirements.txt
 
 COPY scripts/ scripts/
 
+# Ensures necessary permissions available to user in docker image
+RUN chmod -R 777 .
+
 ENTRYPOINT python -u scripts/run.py
