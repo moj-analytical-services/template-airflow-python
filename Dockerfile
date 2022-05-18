@@ -1,6 +1,13 @@
-FROM 593291632749.dkr.ecr.eu-west-1.amazonaws.com/python:alpine3.10
-# If you need to install Pandas or Numpy then use the following base image
-# FROM 593291632749.dkr.ecr.eu-west-1.amazonaws.com/python:3.7-slim
+
+ARG DE_ECR 
+FROM {DE_ECR}/python:3.9-slim
+# There are a number of other source images available:
+# FROM {DE_ECR}/python:3.9-bullseye
+# FROM {DE_ECR}/python:3.8-bullseye
+# FROM {DE_ECR}/python3.7-slim
+# FROM {DE_ECR}/python3.7
+# FROM {DE_ECR}/rstudio:4.0.5-5
+# FROM {DE_ECR}/datascience-notebook:3.1.13
 
 # Create a working directory to do stuff from
 WORKDIR /etl
