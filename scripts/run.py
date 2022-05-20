@@ -21,7 +21,6 @@ elif run == "write":
         raise ValueError(f"Missing TEXT and/or OUTPATH env vars. Got TEXT => {text}. OUTPATH => {write_outpath}.")
     with open("tmp.txt", "w") as f:
         f.write(text)
-
-    write_local_file_to_s3(tmp.name, write_outpath, overwrite=True)
+    write_local_file_to_s3("tmp.txt", write_outpath, overwrite=True)
 else:
     raise ValueError(f"Bad RUN env var. Got {run}. Expected 'copy' or 'write'.")
