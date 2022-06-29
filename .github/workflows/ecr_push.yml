@@ -13,9 +13,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Build, tag, and push image to Amazon ECR
-        uses: moj-analytical-services/actions-build-and-push-to-ecr@main
+        uses: moj-analytical-services/actions-build-and-push-to-ecr@dev
         with:
           role-to-assume: arn:aws:iam::189157455002:role/data-engineering-ga-ecr
+        secrets:
+          username: ${{ secrets.DOCKERHUB_DE_USERNAME }}
+          pat: ${{ secrets.DOCKERHUB_READ_ONLY_PAT }}
       - name: Add cross-account permissions to an image on ECR
         uses: moj-analytical-services/actions-cross-account-ecr@main
         with:
