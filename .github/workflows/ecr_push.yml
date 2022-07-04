@@ -16,7 +16,7 @@ jobs:
         uses: moj-analytical-services/actions-build-and-push-to-ecr@v1
         with:
           role-to-assume: arn:aws:iam::189157455002:role/data-engineering-ga-ecr
-        secrets:
+        env:
           username: ${{ secrets.DOCKERHUB_DE_USERNAME }}
           pat: ${{ secrets.DOCKERHUB_READ_ONLY_PAT }}
       - name: Add cross-account permissions to an image on ECR
